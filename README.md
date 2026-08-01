@@ -1,14 +1,14 @@
 # 📈 Sales Forecasting using Machine Learning
 
-An end-to-end Machine Learning project that predicts future sales using historical sales data. This project demonstrates the complete machine learning workflow, including data cleaning, exploratory data analysis (EDA), feature engineering, model building, evaluation, and model deployment preparation.
+An end-to-end Machine Learning project that predicts future sales using historical sales data. This project demonstrates the complete machine learning workflow, including data cleaning, exploratory data analysis (EDA), feature engineering, model building, evaluation, and model persistence.
 
 ---
 
 # 📌 Project Overview
 
-Sales forecasting helps businesses estimate future sales based on historical data, enabling better inventory management, budgeting, and business planning.
+Sales forecasting is a crucial business task that helps organizations estimate future sales based on historical data. Accurate forecasting supports better inventory management, budgeting, and strategic business planning.
 
-In this project, raw sales data was cleaned and preprocessed before training a **Linear Regression** model to predict future sales. Various visualizations were created to analyze sales trends, regional performance, and model predictions.
+In this project, historical sales data was cleaned, analyzed, and used to train a **Linear Regression** model for predicting future sales. The project includes data preprocessing, exploratory data analysis (EDA), visualization, model training, evaluation, and saving the trained model.
 
 ---
 
@@ -18,7 +18,7 @@ In this project, raw sales data was cleaned and preprocessed before training a *
 - Handle missing values and duplicate records
 - Perform Exploratory Data Analysis (EDA)
 - Create meaningful visualizations
-- Train a Machine Learning model for sales prediction
+- Build a Machine Learning model for sales prediction
 - Evaluate model performance using regression metrics
 - Save the trained model for future predictions
 
@@ -29,18 +29,18 @@ In this project, raw sales data was cleaned and preprocessed before training a *
 | Technology | Purpose |
 |------------|---------|
 | Python | Programming Language |
-| Pandas | Data Cleaning & Analysis |
+| Pandas | Data Cleaning & Data Analysis |
 | NumPy | Numerical Computation |
 | Matplotlib | Data Visualization |
 | Scikit-learn | Machine Learning |
 | OpenPyXL | Reading Excel Files |
-| Pickle | Model Saving |
+| Pickle | Saving Trained Model |
 
 ---
 
 # 📂 Dataset
 
-The dataset contains historical sales information with features such as:
+The dataset contains historical sales records with the following features:
 
 - 📅 Order Date
 - 🌍 Region
@@ -49,7 +49,7 @@ The dataset contains historical sales information with features such as:
 - 💰 Sales
 - 📈 Profit
 
-The dataset was cleaned and transformed before being used for model training.
+The dataset was cleaned and transformed before training the machine learning model.
 
 ---
 
@@ -62,24 +62,21 @@ The following preprocessing steps were performed:
 - ✅ Converted date columns into datetime format
 - ✅ Cleaned categorical values
 - ✅ Performed feature engineering
-- ✅ Prepared data for machine learning
+- ✅ Prepared the dataset for machine learning
 
 ---
 
 # 📊 Exploratory Data Analysis (EDA)
 
-The project includes several visualizations to understand sales patterns.
+The project includes multiple visualizations to better understand historical sales patterns.
 
 ### Visualizations
 
 - 📈 Monthly Sales Trend
 - 🌍 Regional Sales Comparison
-- 📦 Product-wise Sales Analysis
-- 📊 Sales Distribution
 - 📉 Actual vs Predicted Sales
-- 📦 Box Plot for Outlier Detection
 
-These visualizations provide meaningful insights into historical sales performance.
+These visualizations help identify business trends and understand sales performance across different regions.
 
 ---
 
@@ -87,113 +84,128 @@ These visualizations provide meaningful insights into historical sales performan
 
 ### Model Used
 
-- Linear Regression
+- **Linear Regression**
 
 ### Workflow
 
-1. Split dataset into training and testing sets
-2. Train the Linear Regression model
-3. Predict sales on the test dataset
-4. Evaluate model performance
-5. Save the trained model using Pickle
+1. Data Preprocessing
+2. Train-Test Split
+3. Model Training
+4. Sales Prediction
+5. Model Evaluation
+6. Save the Trained Model using Pickle
 
 ---
 
 # 📏 Model Evaluation
 
-The model is evaluated using the following metrics:
+The trained **Linear Regression** model was evaluated using standard regression metrics.
 
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- R² Score (Coefficient of Determination)
-
-These metrics help measure the prediction accuracy of the model.
+| Metric | Value | Description |
+|---------|-------------:|-------------|
+| **Mean Absolute Error (MAE)** | **94,469.21** | Average absolute difference between actual and predicted sales. |
+| **Root Mean Squared Error (RMSE)** | **218,569.01** | Measures prediction error while giving higher weight to larger errors. |
+| **R² Score** | **0.8616 (86.16%)** | Indicates that the model explains approximately **86.16%** of the variance in the sales data. |
 
 ---
 
 # 📈 Results
 
-The trained Linear Regression model successfully predicts future sales based on historical sales data.
+The Linear Regression model achieved good predictive performance on the historical sales dataset.
 
-The project demonstrates the complete machine learning workflow from raw data preprocessing to prediction and model saving.
+### Model Performance
+
+- ✅ **Mean Absolute Error (MAE):** **94,469.21**
+- ✅ **Root Mean Squared Error (RMSE):** **218,569.01**
+- ✅ **R² Score:** **0.8616 (86.16%)**
+
+### Interpretation
+
+- The model explains approximately **86.16%** of the variance in the sales data.
+- The prediction results closely follow the overall sales trend.
+- The model demonstrates good performance for a basic sales forecasting application.
 
 ---
 
 # 💡 Business Insights
 
-Some useful insights obtained from the analysis include:
+The exploratory analysis provides several useful business insights:
 
-- Monthly sales trends help identify seasonal demand.
+- Monthly sales trends help identify seasonal demand patterns.
 - Regional sales comparison highlights the best-performing regions.
-- Product-wise analysis identifies top-selling products.
-- Actual vs Predicted visualization helps evaluate model performance.
-- Data visualization supports better business decision-making.
+- Actual vs Predicted Sales visualization demonstrates that the model captures overall sales behavior effectively.
+- Historical sales analysis can support inventory planning and business decision-making.
 
 ---
 
 # 📁 Project Structure
 
-```
+```text
 Sales_Forecasting/
+│
+├── code/
+│   ├── Sales_Forecasting.ipynb
+│   └── Sales_Forecasting.py
 │
 ├── data/
 │   ├── messy_sales_dataset.xlsx
-│   └── cleaned_sales_dataset.xlsx
+│   └── cleaned_sales_data.xlsx
 │
-├── notebooks/
-│   └── Sales_Forecasting.ipynb
+├── images/
+│   ├── monthly_sales.png
+│   ├── region_sales.png
+│   └── actual_vs_predicted.png
 │
 ├── models/
 │   └── linear_regression_model.pkl
 │
-├── images/
-│   ├── monthly_sales.png
-│   ├── regional_sales.png
-│   ├── product_sales.png
-│   └── actual_vs_predicted.png
-│
-├── requirements.txt
-│
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 # ▶️ How to Run the Project
 
-## Clone the repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Manoj007777/Sales_Forecasting.git
 ```
 
-## Navigate to the project folder
+## Navigate to the Project Directory
 
 ```bash
 cd Sales_Forecasting
 ```
 
-## Install dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the notebook
+## Run the Project
 
-Open the notebook using Jupyter Notebook or Google Colab:
+### Using Jupyter Notebook
 
+Open:
+
+```text
+code/Sales_Forecasting.ipynb
 ```
-notebooks/Sales_Forecasting.ipynb
-```
 
-Run all cells to reproduce the complete workflow.
+### Or Run the Python Script
+
+```bash
+python code/Sales_Forecasting.py
+```
 
 ---
 
 # 📦 Requirements
 
-```
+```text
 pandas
 numpy
 matplotlib
@@ -207,12 +219,11 @@ openpyxl
 
 - Implement Decision Tree Regression
 - Implement Random Forest Regression
-- Try XGBoost Regressor
-- Perform Hyperparameter Tuning
-- Deploy the model using Streamlit
+- Implement XGBoost Regressor
+- Hyperparameter Tuning
+- Deploy the project using Streamlit
 - Build an interactive dashboard
-- Add Time Series Forecasting models
-- Improve prediction accuracy using advanced algorithms
+- Improve prediction accuracy using advanced regression models
 
 ---
 
@@ -222,27 +233,24 @@ openpyxl
 - Data Cleaning
 - Data Preprocessing
 - Exploratory Data Analysis (EDA)
-- Feature Engineering
 - Data Visualization
+- Feature Engineering
 - Machine Learning
 - Linear Regression
 - Model Evaluation
-- Model Serialization
+- Model Serialization (Pickle)
 - Git & GitHub
 
 ---
 
 # 📷 Project Screenshots
 
-Add screenshots of:
+Include screenshots of:
 
-- Monthly Sales Trend
-- Regional Sales Comparison
-- Product-wise Sales
-- Actual vs Predicted Sales
-- Model Evaluation Output
-
-These screenshots make the repository more attractive to recruiters.
+- 📈 Monthly Sales Trend
+- 🌍 Regional Sales Comparison
+- 📉 Actual vs Predicted Sales
+- 📊 Model Evaluation Output
 
 ---
 
